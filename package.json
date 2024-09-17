@@ -1,0 +1,17 @@
+{
+  "name": "tailwind_intro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "serve": "cd src && live-server --port=4455 --no-css-inject"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.11"
+  }
+}

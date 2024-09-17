@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind - Alpine Exercises</title>
+    <link rel="stylesheet" href="output.css">
+    <script defer src="./javascript/alpine3.14.1.min.js"></script>
+</head>
+<body class="text-slate-700 bg-slate-50">
+<main class="container mx-auto">
+    <h1 class="heading_1 text-center">Tailwind - Alpine Exercises</h1>
+
+    <section x-data="{ open: false }" x-cloak class="collaps mb-4">
+        <h2 @click="open = !open">1: Real-time Name Display
+            <span x-show="!open">▴</span>
+            <span x-show="open">▾</span>
+            <span class="info">(click to expand)</span>
+        </h2>
+        <hr>
+        <p>Exercise: <a href="./name_display.html" target="exercise">./name_display.html</a></p>
+        <p>Preview: <a href="./preview/name_display.mp4" target="preview">./preview/name_display.mp4</a></p>
+        <hr x-show="open">
+        <div x-show="open">
+            <h3>Part 1: Tailwind CSS Styling</h3>
+            <ol>
+                <li><b>Body</b>:
+                    <ul>
+                        <li>Set a dark cyan background color for the entire page.</li>
+                        <li>Add padding around the edges.</li>
+                        <li>Make the body take up at least the full height of the viewport.</li>
+                        <li>Center the content both vertically and horizontally.</li>
+                    </ul>
+                </li>
+                <li><b>Button</b>:
+                    <ul>
+                        <li>Position the button absolutely at the top of the page, centered horizontally.</li>
+                        <li>Style it with a cyan background color and a darker cyan stroke.</li>
+                        <li>Add padding, rounded corners, and margin.</li>
+                    </ul>
+                </li>
+                <li><b>Main container</b>:
+                    <ul>
+                        <li>Create a white background container with a shadow and rounded corners.</li>
+                        <li>Set maximum width and full width within that maximum.</li>
+                        <li>Add generous padding inside the container.</li>
+                    </ul>
+                </li>
+                <li><b>Heading</b>:
+                    <ul>
+                        <li>Style the heading with larger text, bold font, centered alignment, and dark gray color.</li>
+                        <li>Add some margin at the bottom.</li>
+                    </ul>
+                </li>
+                <li><b>Label</b>:
+                    <ul>
+                        <li>Make the label text larger and semi-bold with a dark gray color.</li>
+                    </ul>
+                </li>
+                <li><b>Input field</b>:
+                    <ul>
+                        <li>Add a border and style it to change color when focused.</li>
+                        <li>Include padding, rounded corners, and take up the full width.</li>
+                        <li>Implement a smooth transition effect for focus state.</li>
+                    </ul>
+                </li>
+                <li><b>Display paragraph</b>:
+                    <ul>
+                        <li>Center the text and use a medium-large font size.</li>
+                        <li>Style the name display span with bold text and blue color.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Part 2: Alpine.js Functionality</h3>
+
+            <ol>
+                <li><b>Visibility toggle</b>:
+                    <ul>
+                        <li>Create a data property <code>isVisible</code> initialized to <code>false</code>.</li>
+                        <li>Toggle the visibility of the main container when the button is clicked.</li>
+                        <li>Change the button text between "Show" and "Hide" based on the visibility state.</li>
+                    </ul>
+                </li>
+                <li><b>Name input and display</b>:
+                    <ul>
+                        <li>Create a data property <code>name</code> initialized to an empty string.</li>
+                        <li>Bind the input field to the <code>name</code> property using <code>x-model</code>.</li>
+                        <li>Display the entered name in real-time.</li>
+                        <li>Show a placeholder text when no name is entered.</li>
+                    </ul>
+                </li>
+                <li><b>Cloak directive</b>:
+                    <ul>
+                        <li>Use the <code>x-cloak</code> directive to prevent any flickering of Alpine.js template expressions during page load.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section x-data="{ open: false }" x-cloak class="collaps mb-4">
+        <h2 @click="open = !open">2: Post-It
+            <span x-show="!open">▴</span>
+            <span x-show="open">▾</span>
+            <span class="info">(click to expand)</span>
+        </h2>
+        <hr>
+        <p>Exercise: <a href="./postit.html" target="exercise">./postit.html</a></p>
+        <p>Preview: <a href="./preview/pistit.mp4" target="preview">./preview/pistit.mp4</a></p>
+        <hr x-show="open">
+        <div x-show="open">
+            <ol>
+                <li><b>Body</b>:
+                    <ul>
+                        <li>Apply a light gray background color to the entire page.</li>
+                    </ul>
+                </li>
+                <li><b>Main Container</b>:
+                    <ul>
+                        <li>Center the content and add a top margin.</li>
+                    </ul>
+                </li>
+                <li><b>h1 Tag</b>:
+                    <ul>
+                        <li>Style the text to be larger, bolder, centered, and dark red in color.</li>
+                    </ul>
+                </li>
+                <li><b>Horizontal Rule</b>:
+                    <ul>
+                        <li>Add vertical spacing above and below the horizontal rule.</li>
+                    </ul>
+                </li>
+                <li><b>Content Grid</b>:
+                    <ul>
+                        <li>Design a responsive grid layout that transitions from 1 column on small screens to 2 columns
+                            on medium screens and 3 columns on larger screens.
+                        </li>
+                        <li>Include horizontal padding on small screens, removing it on medium and larger screens.</li>
+                        <li>Use a vertical gradient background from white to light gray.</li>
+                        <li>Add a dark red border and rounded corners to the grid container.</li>
+                        <li>Apply a shadow effect to the container.</li>
+                        <li>Include padding inside the container.</li>
+                    </ul>
+                </li>
+                <li><b>Paragraphs within the Grid</b>:
+                    <ul>
+                        <li>Style the text in dark blue.</li>
+                        <li>Change the text color to pink on hover.</li>
+                        <li>Set the cursor to "not-allowed" on hover.</li>
+                        <li>Add a border and padding to each paragraph.</li>
+                        <li>Apply a shadow effect that intensifies on hover.</li>
+                        <li>Implement smooth transitions for hover effects.</li>
+                    </ul>
+                </li>
+                <li><b>Individual Paragraph Hover Effects</b>:
+                    <ul>
+                        <li><b>First Paragraph</b>: Rotate 3 degrees counter-clockwise and change the background to
+                            light green on hover.
+                        </li>
+                        <li><b>Second Paragraph</b>: Rotate 3 degrees clockwise and change the background to light amber
+                            on hover.
+                        </li>
+                        <li><b>Third Paragraph</b>: Rotate 6 degrees counter-clockwise and change the background to
+                            light blue on hover.
+                        </li>
+                        <li><b>Fourth Paragraph</b>: Rotate 3 degrees clockwise and change the background to light amber
+                            on hover.
+                        </li>
+                        <li><b>Fifth Paragraph</b>: Rotate 15 degrees clockwise and change the background to light lime
+                            on hover.
+                        </li>
+                        <li><b>Sixth Paragraph</b>: Rotate 3 degrees clockwise and change the background to light amber
+                            on hover.
+                        </li>
+                        <li><b>Seventh Paragraph</b>: Rotate 5 degrees counter-clockwise and change the background to
+                            light orange on hover.
+                        </li>
+                        <li><b>Eighth Paragraph</b>: Rotate 3 degrees clockwise and change the background to light teal
+                            on hover.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section x-data="{ open: false }" x-cloak class="collaps">
+        <h2 @click="open = !open">3: Todo List
+            <span x-show="!open">▴</span>
+            <span x-show="open">▾</span>
+            <span class="info">(click to expand)</span>
+        </h2>
+        <hr>
+        <p>Exercise: <a href="./todo.html" target="exercise">./todo.html</a></p>
+        <p>Preview: <a href="./preview/todo.mp4" target="preview">./todo.mp4</a></p>
+        <hr x-show="open">
+        <div x-show="open">
+            <h3>Part 1: Tailwind CSS Styling</h3>
+            <ol>
+                <li><b>Body</b>:
+                    <ul>
+                        <li>Set a dark blue background color for the entire page.</li>
+                        <li>Make the body take up the full height of the viewport.</li>
+                        <li>Center the content both vertically and horizontally.</li>
+                        <li>Add padding around the edges.</li>
+                    </ul>
+                </li>
+                <li><b>Main container</b>:
+                    <ul>
+                        <li>Create a white background container with rounded corners.</li>
+                        <li>Set maximum width and center it horizontally.</li>
+                        <li>Add padding inside the container.</li>
+                    </ul>
+                </li>
+                <li><b>Heading</b>:
+                    <ul>
+                        <li>Style the heading with larger text, bold font, centered alignment.</li>
+                        <li>Add padding around the heading.</li>
+                    </ul>
+                </li>
+                <li><b>Search input</b>:
+                    <ul>
+                        <li>Style the input with full width, padding, border, and rounded corners.</li>
+                        <li>Add vertical margin.</li>
+                    </ul>
+                </li>
+                <li><b>Todo list</b>:
+                    <ul>
+                        <li>Create space between list items.</li>
+                    </ul>
+                </li>
+                <li><b>List items</b>:
+                    <ul>
+                        <li>Style with light blue background, padding, and rounded corners.</li>
+                        <li>Set text color to dark blue.</li>
+                        <li>On hover:
+                            <ul>
+                                <li>Change background to dark blue and text to white.</li>
+                                <li>Add a dark blue border.</li>
+                                <li>Increase padding slightly.</li>
+                                <li>Change cursor to pointer.</li>
+                            </ul>
+                        </li>
+                        <li>Implement smooth transitions for hover effects.</li>
+                    </ul>
+                </li>
+                <li><b>Add new item input</b>:
+                    <ul>
+                        <li>Style similar to the search input.</li>
+                        <li>Add some margin at the bottom.</li>
+                    </ul>
+                </li>
+                <li><b>Add button</b>:
+                    <ul>
+                        <li>Style with dark blue background and white text.</li>
+                        <li>Add padding, rounded corners, and make it full width.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Part 2: Alpine.js Functionality</h3>
+
+            <ol>
+                <li><b>Data management</b>:
+                    <ul>
+                        <li>Create data properties for <code>search</code>, <code>newItem</code>, and <code>items</code> (initialized with some default values).</li>
+                    </ul>
+                </li>
+                <li><b>Computed property</b>:
+                    <ul>
+                        <li>Implement a <code>filteredItems</code> computed property that filters the items based on the search input.</li>
+                    </ul>
+                </li>
+                <li><b>Add item functionality</b>:
+                    <ul>
+                        <li>Create an <code>addItem</code> method that adds the <code>newItem</code> to the <code>items</code> array and clears the input.</li>
+                    </ul>
+                </li>
+                <li><b>Delete item functionality</b>:
+                    <ul>
+                        <li>Implement a <code>deleteItem</code> method that removes the clicked item from the <code>items</code> array.</li>
+                    </ul>
+                </li>
+                <li><b>Search functionality</b>:
+                    <ul>
+                        <li>Bind the search input to the <code>search</code> data property.</li>
+                        <li>Use the <code>filteredItems</code> computed property to display the list.</li>
+                    </ul>
+                </li>
+                <li><b>List rendering</b>:
+                    <ul>
+                        <li>Use <code>x-for</code> directive to render the filtered list items.</li>
+                        <li>Bind the item text and click event for deletion.</li>
+                    </ul>
+                </li>
+                <li><b>New item input</b>:
+                    <ul>
+                        <li>Bind the input to the <code>newItem</code> data property.</li>
+                        <li>Trigger the <code>addItem</code> method when the Add button is clicked.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+</main>
+</body>
+</html>
